@@ -1,4 +1,4 @@
-const BASE_URL = "https://retoolapi.dev/zu9TVE/jokes";
+const BASE_URL = "https://retoolapi.dev";
 import axios, { AxiosInstance } from 'axios';
 
 const axiosOptions ={

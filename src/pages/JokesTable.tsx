@@ -1,39 +1,62 @@
 import './jokes-table.scss';
+import { api } from "../api/axios";
+import { useEffect, useState } from 'react';
+import { GET_ALL_JOKES } from "../../apiroutes";
+import { Spinner } from '../components';
+import { JokeInterface } from '../types/types';
 
+//feth data as soon as component mounts
 const JokesTable = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [allJokes,setAllJokes] = useState<JokeInterface[]>([]);
 
-  const data = [
-    { title: 'Sample Title 1', author: 'John Doe', createdDate: '2023-08-01', views: 120 },
-    { title: 'Sample Title 2', author: 'Jane Smith', createdDate: '2023-07-25', views: 85 },
-    { title: 'Sample Title 3', author: 'Mike Johnson', createdDate: '2023-07-15', views: 220 },
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setIsLoading(true);
+      try {
+        const jokes = await api.get(GET_ALL_JOKES);
+        setAllJokes(jokes.data)
+        console.log(jokes.data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  ];
+    fetchPosts();
+    setIsLoading(false);
+
+  }, []);
+
+  
   return (
     <section>
 
       <h2>Jokes</h2>
-      <div className="data-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Created Date</th>
-              <th>Views</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item, index) => (
-              <tr key={index}>
-                <td>{item.title}</td>
-                <td>{item.author}</td>
-                <td>{item.createdDate}</td>
-                <td>{item.views}</td>
+      {isLoading
+        ? <Spinner />
+        : <div className="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Created Date</th>
+                <th>Views</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {allJokes.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.title}</td>
+                  <td>{item.author}</td>
+                  <td>{item.createdAt}</td>
+                  <td>{item.views}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      }
     </section>
   )
 }

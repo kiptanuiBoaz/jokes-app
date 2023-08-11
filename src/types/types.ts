@@ -1,10 +1,10 @@
 export interface JokeInterface {
     "id": string,
-    "Title": string,
-    "Body": string,
-    "Author": string,
-    "Views": number,
-    "CreatedAt": number
+    "title": string,
+    "body": string,
+    "author": string,
+    "views": number,
+    "createdAt": number
 }
 
 export interface JokeStateInterface {
