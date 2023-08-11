@@ -17,8 +17,11 @@ export interface PagenationInterface {
 }
 export interface PaginationPayloadInterface {
     page: number | string,
+}
+export interface ItemsPerPagePayloadInterface {
     limit: number,
 }
 export interface PaginationStateInterface {
     pagination: PagenationInterface
 }
+

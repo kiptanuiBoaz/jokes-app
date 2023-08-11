@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {  PaginationPayloadInterface, PaginationStateInterface } from "../types/types";
+import {  ItemsPerPagePayloadInterface, PaginationPayloadInterface, PaginationStateInterface } from "../types/types";
 
 const initialState:PaginationStateInterface = {
     pagination: {
@@ -13,9 +13,8 @@ const paginationSlice = createSlice({
     initialState,
     reducers: {
         NAVIGATE_PAGE: (state, action: PayloadAction<PaginationPayloadInterface>)=>{
-            const { page, limit } = action.payload;
-            state.pagination.limit = limit;
-
+            const { page } = action.payload;
+           
             //navigate to page of jokes
             if (page === "next") {
                 state.pagination.page += 1;
@@ -24,13 +23,18 @@ const paginationSlice = createSlice({
             }else{
                 state.pagination.page = page;
             }
+        },
+        UPDATE_ITEMS_PER_PAGE:(state, action: PayloadAction<ItemsPerPagePayloadInterface>)=>{
+            const {limit} = action.payload;
+            state.pagination.limit = limit;
+
         }
     }
 
 });
 
 //make action available for all components
-export const {NAVIGATE_PAGE} = paginationSlice.actions;
+export const {NAVIGATE_PAGE,  UPDATE_ITEMS_PER_PAGE} = paginationSlice.actions;
 //reducer to store
 export default paginationSlice.reducer;
 //reference to paginaton state
