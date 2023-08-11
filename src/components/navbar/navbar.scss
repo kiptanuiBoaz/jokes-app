@@ -1,0 +1,35 @@
+/* navbar.scss */
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    margin:0;
+  
+    .logo {
+      font-size: 1.5rem;
+    }
+  
+    .link-container {
+      display: flex;
+      gap: 10px;
+    }
+  
+    .action-btn,
+    .logout-button {
+      padding: 8px 12px;
+      background-color: #555;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .logout-button {
+      background-color: #d9534f;
+    }
+  }
+  

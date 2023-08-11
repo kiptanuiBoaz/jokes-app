@@ -2,14 +2,14 @@ import { lazy, Suspense } from "react";
 import './App.css';
 import ScrollToTop from "react-scroll-to-top";
 import { Spinner } from "./components";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Layout } from "../Layout";
 import RequireAuth from "./pages/RequireAuth";
 const JokesTable = lazy(() => import("./pages/JokesTable"));
 const Login = lazy(() => import("./pages/Login"));
 const EditForm = lazy(() => import("./pages/EditForm"));
 
-function App() {
+export const App = () => {
 
   return (
     <>
@@ -22,18 +22,18 @@ function App() {
             {/* access only to authoenticated users */}
             <Route element={<RequireAuth />} >
               <Route index element={<JokesTable />} />
-              <Route path="/edit" element={<EditForm/>}/>
+              <Route path="/edit" element={<EditForm />} />
             </Route>
 
           </Route>
 
           {/* outside navbar and footer */}
           <Route path="login" element={<Login />} />
-
+          {/* cath all lost directories and redirect to root */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
     </>
   )
 }
 
-export default App

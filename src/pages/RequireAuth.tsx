@@ -6,7 +6,7 @@ import { useLocation, Outlet, useNavigate, Navigate } from "react-router-dom";
 const RequireAuth = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const checkCookiePresence = (name: string) => {
         const cookies = document.cookie.split('; ');
