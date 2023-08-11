@@ -11,6 +11,14 @@ export interface JokeStateInterface {
     joke: JokeInterface;
 }
 
-// export interface JokesListInterface{
-    
-// }
+export interface PagenationInterface {
+    page: number,
+    limit: number,
+}
+export interface PaginationPayloadInterface {
+    page: number | string,
+    limit: number,
+}
+export interface PaginationStateInterface {
+    pagination: PagenationInterface
+}

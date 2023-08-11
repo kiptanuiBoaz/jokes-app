@@ -1,20 +1,25 @@
 import './jokes-table.scss';
 import { api } from "../api/axios";
 import { useEffect, useState } from 'react';
+import {useSelector} from "react-redux"
 import { GET_ALL_JOKES } from "../../apiroutes";
 import { Spinner } from '../components';
-import { JokeInterface } from '../types/types';
+import { JokeInterface, PagenationInterface } from '../types/types';
+import { selectPagination } from '../redux/paginatinSlice';
 
 //feth data as soon as component mounts
 const JokesTable = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [allJokes,setAllJokes] = useState<JokeInterface[]>([]);
+  //pagination state from redux store
+  const {page,limit}:PagenationInterface = useSelector(selectPagination)
 
   useEffect(() => {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const jokes = await api.get(GET_ALL_JOKES);
+        // const jokes = await api.get(`${GET_ALL_JOKES}?_page=${page}&_limit=${limit}`);
+        const jokes = await api.get(GET_ALL_JOKES)
         setAllJokes(jokes.data)
         console.log(jokes.data)
       } catch (error) {
@@ -25,7 +30,7 @@ const JokesTable = () => {
     fetchPosts();
     setIsLoading(false);
 
-  }, []);
+  }, [limit,page]);
 
   
   return (
