@@ -12,8 +12,8 @@ const JokesTable = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [allJokes,setAllJokes] = useState<JokeInterface[]>([]);
   //pagination state from redux store
-  const {page,limit}:PagenationInterface = useSelector(selectPagination)
-
+  const {pagination:{page,limit}}:PagenationInterface = useSelector(selectPagination)
+console.log(isLoading)
   useEffect(() => {
     const fetchPosts = async () => {
       setIsLoading(true);
@@ -21,13 +21,16 @@ const JokesTable = () => {
         const jokes = await api.get(`${GET_ALL_JOKES}?_page=${page}&_limit=${limit}`);
         // const jokes = await api.get(GET_ALL_JOKES)
         setAllJokes(jokes.data)
+        // console.log(jokes.data)
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
       }
     };
 
     fetchPosts();
-    setIsLoading(false);
+   
 
   }, [limit,page]);
 
