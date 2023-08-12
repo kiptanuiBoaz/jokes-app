@@ -38,4 +38,4 @@ export const {NAVIGATE_PAGE,  UPDATE_ITEMS_PER_PAGE} = paginationSlice.actions;
 //reducer to store
 export default paginationSlice.reducer;
 //reference to paginaton state
-export const selectPagination = (state: PaginationStateInterface) => state.pagination;
+export const selectPagination = (state:{pagination:PaginationStateInterface} ) => state.pagination.pagination;

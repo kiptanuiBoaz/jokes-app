@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import paginationSlice from '../redux/paginatinSlice';
+import jokeSlice from '../redux/jokeSlice';
 
 
 const store = configureStore({
   reducer: {
     pagination:paginationSlice,
+    joke:jokeSlice,
   },
 });
 

@@ -24,7 +24,7 @@ const LoginForm: React.FC = () => {
 
             <h1 className='logo'>Login</h1>
 
-            <form className="login-form" onSubmit={handleLogin}>
+            <form className="login-form">
                 <label>
                     Email:
                     <input

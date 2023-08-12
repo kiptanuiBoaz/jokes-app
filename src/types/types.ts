@@ -7,8 +7,13 @@ export interface JokeInterface {
     "createdAt": number
 }
 
+export interface EditingIdInterface{
+    editingId:string;
+}
+
 export interface JokeStateInterface {
     joke: JokeInterface;
+    editingId:string;
 }
 
 export interface PagenationInterface {

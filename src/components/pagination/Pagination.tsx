@@ -1,14 +1,14 @@
 import React from 'react';
 import './pagination.scss';
 import { useSelector, useDispatch } from "react-redux";
-import { NAVIGATE_PAGE, UPDATE_ITEMS_PER_PAGE, selectPagination } from '../../redux/paginatinSlice';
+import { NAVIGATE_PAGE, selectPagination } from '../../redux/paginatinSlice';
 
 
 export const Pagination: React.FC = () => {
     //show three page numbers
     const pagesToShow = 3;
     // pagination state from redux store
-    const { pagination: { limit, page: currentPage } } = useSelector(selectPagination);
+    const  { limit, page: currentPage  } = useSelector(selectPagination);
 
     const dispatch = useDispatch();
 
