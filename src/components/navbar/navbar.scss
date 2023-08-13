@@ -38,6 +38,9 @@
   .link-container {
     display: flex;
     gap: 10px;
+    @media only screen and (max-width: 720px){
+      flex-direction: column;
+    }
   }
 
   .action-btn,

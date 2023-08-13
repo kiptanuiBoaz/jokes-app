@@ -11,3 +11,7 @@
     --secondary-color:#097ea5;
     --global-font-family:"Merriweather Sans", sans-serif;
 }
+
+html{
+    font-family: var(--global-font-family)!important;
+}
