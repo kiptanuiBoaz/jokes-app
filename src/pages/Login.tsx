@@ -8,6 +8,11 @@ const LoginForm: React.FC = () => {
     const [password, setPassword] = useState('pReFiLl@123');
     const navigate = useNavigate();
 
+    const style = {
+        backgroundColor:"#17191d",
+        color:"#fff",
+    }
+
     //set cookie in the browser
     const setCookie = (name: string, value: string, days: number) => {
         const expirationDate = new Date();
@@ -20,31 +25,27 @@ const LoginForm: React.FC = () => {
     };
 
     return (
-        <div className="login-form-container">
+        <div style={style} className="login-form-container">
 
             <h1 className='logo'>Login</h1>
 
             <form className="login-form">
-                <label>
-                    Email:
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        disabled
-                        required
-                    />
-                </label>
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        disabled
-                        required
-                    />
-                </label>
+                <label>Email:</label>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled
+                    required
+                />
+                <label>Password:</label>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    disabled
+                    required
+                />
                 <button
                     onClick={(e: React.FormEvent) => {
                         e.preventDefault();

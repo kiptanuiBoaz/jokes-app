@@ -14,7 +14,7 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            <main style={{minHeight:"580px"}}>
+            <main style={{minHeight:"600px"}}>
                 {/* check if user is authenticated */}
                 {isCookiePresent ? <Outlet />: <Navigate  to= "/login"/>}
                 

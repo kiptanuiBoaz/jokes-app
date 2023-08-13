@@ -1,9 +1,13 @@
 footer {
   text-align: center;
-  background-color: #333;
+  background-color:var(--dark-primary-background-color)!important;
   color: var(--secondary-color) !important;;
   position: absolute;
   bottom: 0;
   width: 100%;
   
+}
+
+.dark-footer{
+  background-color: #0f1113!important;; 
 }

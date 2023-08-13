@@ -2,9 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { ThemeInterface } from "../types/types";
 
 const initialState: ThemeInterface = {
-    theme: "light",
+    theme: "dark",
 };
 
+//managing theme
 const themeSlice = createSlice({
     name: "theme",
     initialState,

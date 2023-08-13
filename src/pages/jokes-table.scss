@@ -1,7 +1,8 @@
 /* styles.scss */
 .table-container {
- 
-
+  .page-name{
+    text-align: center;
+  }
   .data-table {
     margin: 20px;
     font-family: Arial, sans-serif;
@@ -10,10 +11,9 @@
       width: 100%;
       border-collapse: collapse;
 
-      .title{
-        &:hover{
+      .title {
+        &:hover {
           text-decoration: underline;
-          color:black;
           cursor: pointer;
         }
       }
@@ -36,6 +36,25 @@
 
       tr:hover {
         background-color: #ddd;
+      }
+    }
+  }
+}
+
+.dark-table {
+  .data-table {
+    table {
+      th {
+        color: var(--secondary-color);
+        background-color: var(--dark-accent-background-color);
+      }
+
+      tr:nth-child(even) {
+        background-color: var(--dark-accent-background-color);
+      }
+
+      tr:hover {
+        background-color: #0f1113; 
       }
     }
   }

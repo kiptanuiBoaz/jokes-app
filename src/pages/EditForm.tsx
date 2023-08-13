@@ -27,12 +27,12 @@ const EditForm = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
-    const res = await api({
-      method: editingId === "editing" ? "PUT" : "POST",
-      url: editingId === "editing" ? `${EDIT_JOKE}/${existingJoke.id}` : ADD_JOKE,
-      data: joke
-    });
-    console.log(res)
+    // const res = await api({
+    //   method: editingId === "editing" ? "PUT" : "POST",
+    //   url: editingId === "editing" ? `${EDIT_JOKE}/${existingJoke.id}` : ADD_JOKE,
+    //   data: joke
+    // });
+    // console.log(res)
 
     dispatch(RESET_JOKE());
     navigate("/");
@@ -41,9 +41,9 @@ const EditForm = () => {
 
   //delete joke
   const handleDelete = async () => {
-    console.log(DELETE_JOKE)
-    const res = await api.delete(`${EDIT_JOKE}/${existingJoke.id}`);
-    console.log(res)
+    // console.log(DELETE_JOKE)
+    // const res = await api.delete(`${EDIT_JOKE}/${existingJoke.id}`);
+    // console.log(res)
 
     dispatch(RESET_JOKE());
     navigate("/");

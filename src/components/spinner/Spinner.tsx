@@ -6,7 +6,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 export const Spinner = () => {
     useEffect(() => {
         Loading.dots({
-            svgColor: "#4d7e3e",
+            svgColor: "#097ea5",
             backgroundColor: "rgba(0,0,0,0.4)"
         });
         return () => Loading.remove()

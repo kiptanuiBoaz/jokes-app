@@ -21,7 +21,3 @@ body{
 .light input, .light textarea{
     background-color: var(--light-primary-background-color);
 }
-
-.dark th{
-    background-color: var(--dark-primary-background-color)!important;
-}

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color:var(--dark-primary-background-color);
   padding: 10px 20px;
   color: white;
   margin: 0;
@@ -43,20 +43,28 @@
   .action-btn,
   .logout-button {
     padding: 8px 12px;
-    background-color: #555;
+    background-color:var(--secondary-color);
     border: none;
     border-radius: 4px;
     color: white;
     cursor: pointer;
+
+    &:hover{
+      background-color:#066281 ;
+    }
   }
 
   .logout-button {
     background-color: #d9534f;
+
+    &:hover{
+      background-color:#d3332d;
+    }
   }
 }
 
 .dark-nav{
-  background-color:#0f1113; ;
+  background-color:#0f1113; 
 }
 
 
