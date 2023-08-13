@@ -6,6 +6,7 @@ import { v4 } from "uuid";
 const LoginForm: React.FC = () => {
     const [email, setEmail] = useState('prefilled@gmail.com');
     const [password, setPassword] = useState('pReFiLl@123');
+    const token =  import.meta.env.VITE_COOKIE_TOKEN;
     const navigate = useNavigate();
 
     const style = {
@@ -49,7 +50,7 @@ const LoginForm: React.FC = () => {
                 <button
                     onClick={(e: React.FormEvent) => {
                         e.preventDefault();
-                        setCookie('token', v4(), 7);
+                        setCookie(token, v4(), 7);
                     }}
                     type="submit"
                 >

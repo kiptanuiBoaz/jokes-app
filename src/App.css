@@ -15,7 +15,6 @@ body{
 }
 
 
-
 .light{
     color:var(--light-primary-color);
     background-color:var(--light-accent-background-color);

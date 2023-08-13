@@ -1,29 +1,23 @@
-import { useLocation, Outlet, useNavigate, Navigate } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 // import { setPrevUrl } from "../api/navSlice";
 
 
 const RequireAuth = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    // const dispatch = useDispatch();
+  const token = import.meta.env.VITE_COOKIE_TOKEN;
 
-    const checkCookiePresence = (name: string) => {
-        const cookies = document.cookie.split('; ');
-        return cookies.some(cookie => cookie.startsWith(name + '='));
-      };
-    
-      const handleCheckPresence = () => {
-        const isCookiePresent = checkCookiePresence('exampleCookie');
-        console.log('Cookie is present:', isCookiePresent);
-      };
+  const checkCookiePresence = (name: string) => {
+    const cookies = document.cookie.split('; ');
+    return cookies.some(cookie => cookie.startsWith(name + '='));
+  };
 
-    const reroute = () => {
-        // dispatch(setPrevUrl(location.pathname));
-        return <Navigate to="/auth/sign-in"/>
-    }
-// isCookiePresent ? <Outlet /> : reroute();
-    return <Outlet />
+  const isCookiePresent = checkCookiePresence(token);
+  //back to login page
+  const reroute = () => {
+    return <Navigate to="/login" />
+  }
+   
+  return  isCookiePresent ? <Outlet /> : reroute();
 
 }
 

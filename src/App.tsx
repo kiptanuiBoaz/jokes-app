@@ -17,7 +17,7 @@ export const App = () => {
 
   return (
     <main className={`${theme}`}>
-      <ScrollToTop style={{ backgroundColor: "#4d7e3e", zIndex: 7 }} smooth color="#eeeee4" />
+      <ScrollToTop style={{ backgroundColor: "#097ea5", zIndex: 7 }} smooth color="#eeeee4" />
 
       <Suspense fallback={<Spinner />}>
         <Routes>

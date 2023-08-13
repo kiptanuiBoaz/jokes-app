@@ -11,9 +11,11 @@ import { useNavigate } from 'react-router-dom';
 import { resolveColor } from '../lib/resolveColor';
 import { selectTheme } from '../redux/themeSlice';
 import { dateFnsFormat } from '../lib/resolveDate';
+import { modifyText } from '../lib/shortText';
 
 //feth data as soon as component mounts
 const JokesTable = () => {
+  const [deviceWidth, setDeviceWidth] = useState<number>(window.innerWidth);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [allJokes, setAllJokes] = useState<JokeInterface[]>([]);
   //pagination state from redux store
@@ -22,6 +24,19 @@ const JokesTable = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // //keeping track of device width
+  useEffect(() => {
+    const handleEvent = () => setDeviceWidth(window.innerWidth);
+
+    //listen for width change
+    window.addEventListener('resize', handleEvent);
+
+    //clean up event listener
+    return () => window.removeEventListener('resize', handleEvent);
+
+  }, [deviceWidth]);
+
+
   useEffect(() => {
     //get all posts from API
     const fetchPosts = async () => {
@@ -29,7 +44,7 @@ const JokesTable = () => {
       try {
         const jokes = await api.get(`${GET_ALL_JOKES}?_page=${page}&_limit=${limit}`);
         setAllJokes(jokes.data)
-        console.log(jokes.data)
+        // console.log(jokes.data)
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -78,9 +93,9 @@ const JokesTable = () => {
                       id, title, author, body, createdAt, views
                     })}
                   >
-                    {title}
+                    {modifyText(deviceWidth,title)}
                   </td>
-                  <td>{author}</td>
+                  <td>{modifyText(deviceWidth,author)}</td>
                   <td>{dateFnsFormat(createdAt)}</td>
                   <td style={{
                     color: resolveColor(views)

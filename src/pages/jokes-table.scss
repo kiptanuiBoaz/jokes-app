@@ -1,6 +1,10 @@
 /* styles.scss */
 .table-container {
   padding: 0 5%;
+  @media only screen and (max-width: 720px){
+    padding: 0;
+    margin-right: 10px;
+  }
   .page-name{
     text-align: center;
   }

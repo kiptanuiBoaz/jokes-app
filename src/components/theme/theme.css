@@ -1,10 +1,10 @@
 #darkmode {
   display: flex;
   justify-content: center;
- margin: 0 20px  0;
- @media only screen and (max-width: 720px) {
-    margin:20px;
- }
+  margin: 0 20px 0;
+  @media only screen and (max-width: 720px) {
+    margin: 20px;
+  }
 }
 
 #darkmode .dark {
@@ -15,7 +15,8 @@
   position: absolute;
 }
 
-#darkmode .label { border:#dddfe4 2px solid;
+#darkmode .label {
+  border: #dddfe4 2px solid;
   width: 30px;
   height: 8px;
   background-color: #111;

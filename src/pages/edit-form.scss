@@ -29,7 +29,7 @@
     button {
       padding: 10px 20px;
       font-size: 1rem;
-      background-color: #007bff;
+      background-color: var(--secondary-color);
       color: white;
       border: none;
       border-radius: 5px;
@@ -37,15 +37,15 @@
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color:var(--secondary-color-hover)
       }
 
       & + button {
         margin-left: 10px;
-        background-color: #dc3545;
+        background-color: var(--danger-color);
 
         &:hover {
-          background-color: #c82333;
+          background-color:var( --danger-hover-color)
         }
       }
     }

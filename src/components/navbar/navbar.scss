@@ -14,20 +14,32 @@
     color: var(--secondary-color) !important;
   }
 
+  .menu-icon {
+    cursor: pointer;
+    &:hover {
+      color: var(--secondary-color);
+    }
+    @media only screen and (min-width: 720px) {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    display: absolute !important;
+    flex-direction: column;
+
+    .link-container {
+      flex-direction: column;
+    }
+  }
+
   .nav-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
     @media only screen and (max-width: 720px) {
       flex-direction: column;
-    }
-    .view-all-jokes {
-      cursor: pointer;
-      padding: 5px;
-      border-radius: 4px 8px;
-      &:hover {
-        background-color: #4b4a4a;
-      }
+      display: none;
     }
 
     .link-container {
@@ -36,7 +48,7 @@
       @media only screen and (max-width: 720px) {
         flex-direction: column;
       }
-    }    
+    }
   }
 }
 
