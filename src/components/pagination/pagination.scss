@@ -5,6 +5,19 @@
     align-items: center;
     justify-content: center;
     margin: 20px;
+    
+
+    .items-per-page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      select {
+        padding: 4px 6px;
+        border-radius: 4px;
+        margin-left: 5px;
+      }
+    }
   
     .pagination-button {
       padding: 8px 12px;

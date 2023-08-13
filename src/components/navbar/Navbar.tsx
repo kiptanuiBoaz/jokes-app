@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { UPDATE_EDITING_ID, selectEditingId } from '../../redux/jokeSlice';
 import { selectTheme } from '../../redux/themeSlice';
-import { ItemsPerPage, Theme } from '..';
+import { ActionBtn, DangerBtn, Theme } from '..';
 
 export const Navbar = () => {
   //redux store states
@@ -32,21 +32,14 @@ export const Navbar = () => {
     <nav className={`navbar-container ${theme}-nav`}>
       <h1 className='logo'>Joke App</h1>
       {/* display limit selectror when viewing table */}
-      {
-        editingId === "editing"
-          ? <p onClick={() => handleClick()} className='view-all-jokes'>View All jokes</p>
-          : <ItemsPerPage/>
-      }
-      
-      <Theme/>
 
-      <div className='link-container'>
-        <button
-          onClick={handleClick}
-          className='action-btn'>
-          {editingId === "add" ? "Add New Joke" : "Cancel"}
-        </button>
-        <button className='logout-button' onClick={() => logOut()}>Logout</button>
+      <div className='nav-items'>
+
+        <div className='link-container'>
+          <ActionBtn clickHandler={handleClick}>  {editingId === "add" ? "Add New Joke" : "Back to Jokes"}</ActionBtn>
+          <DangerBtn clickHandler={logOut}>Logout</DangerBtn>
+        </div>
+        <Theme />
       </div>
 
     </nav>

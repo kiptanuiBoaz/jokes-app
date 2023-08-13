@@ -6,7 +6,10 @@ export interface JokeInterface {
     "views": number,
     "createdAt": string
 }
-
+export interface DangerBtnPropTypes{
+    clickHandler:()=>void,
+    children:string | string[];
+}
 export interface ThemeInterface {
     theme: string;
 }

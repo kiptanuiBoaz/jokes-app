@@ -4,70 +4,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:var(--dark-primary-background-color);
+  background-color: var(--dark-primary-background-color);
   padding: 10px 20px;
   color: white;
   margin: 0;
 
   .logo {
     font-size: 1.5rem;
-    color: var(--secondary-color)!important;
+    color: var(--secondary-color) !important;
   }
 
-  .items-per-page {
+  .nav-items {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 20px;
-    select {
-      padding: 4px 6px;
-      border-radius: 4px;
-      margin-left: 5px;
-    }
-  }
-
-  .view-all-jokes {
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 4px 8px;
-    &:hover {
-      background-color: #4b4a4a;
-    }
-  }
-
-  .link-container {
-    display: flex;
-    gap: 10px;
-    @media only screen and (max-width: 720px){
+    @media only screen and (max-width: 720px) {
       flex-direction: column;
     }
-  }
-
-  .action-btn,
-  .logout-button {
-    padding: 8px 12px;
-    background-color:var(--secondary-color);
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-
-    &:hover{
-      background-color:#066281 ;
+    .view-all-jokes {
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px 8px;
+      &:hover {
+        background-color: #4b4a4a;
+      }
     }
-  }
 
-  .logout-button {
-    background-color: #d9534f;
-
-    &:hover{
-      background-color:#d3332d;
-    }
+    .link-container {
+      display: flex;
+      gap: 10px;
+      @media only screen and (max-width: 720px) {
+        flex-direction: column;
+      }
+    }    
   }
 }
 
-.dark-nav{
-  background-color:#0f1113; 
+.dark-nav {
+  background-color: #0f1113;
 }
-
-

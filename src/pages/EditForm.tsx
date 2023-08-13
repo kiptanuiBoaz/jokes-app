@@ -6,6 +6,8 @@ import { ADD_JOKE, EDIT_JOKE } from "../../apiroutes";
 import { DELETE_JOKE } from "../../apiroutes";
 import { api } from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import { DangerBtn } from "../components/danger-btn/DangerBtn";
+import { ActionBtn } from "../components";
 
 const EditForm = () => {
   const existingJoke = useSelector(selectJoke);
@@ -16,7 +18,7 @@ const EditForm = () => {
   const navigate = useNavigate();
 
   //handle formData change
-  const handleInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
+  const handleInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setJoke((prevJoke) => ({
       ...prevJoke,
       [name]: value,
@@ -24,9 +26,8 @@ const EditForm = () => {
   };
 
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
+  
     // const res = await api({
     //   method: editingId === "editing" ? "PUT" : "POST",
     //   url: editingId === "editing" ? `${EDIT_JOKE}/${existingJoke.id}` : ADD_JOKE,
@@ -81,11 +82,12 @@ const EditForm = () => {
           rows={6}
           cols={5}
           value={joke.body}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>)=>handleInputChange(e)} />
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => handleInputChange(e)} />
         <br />
 
-        <button onClick={(e) => handleSubmit(e)} type="submit">{editingId === "editing" ? 'Save' : 'Add'}</button>
-        {editingId === "editing" && <button onClick={() => handleDelete()}>Delete</button>}
+        <ActionBtn clickHandler={handleSubmit}>{editingId === "editing" ? 'Save' : 'Add'}</ActionBtn>
+        {editingId === "editing" && <DangerBtn clickHandler={handleDelete}>Delete</DangerBtn>}
+
       </form>
     </div>
   )

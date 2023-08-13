@@ -2,6 +2,7 @@ import React from 'react';
 import './pagination.scss';
 import { useSelector, useDispatch } from "react-redux";
 import { NAVIGATE_PAGE, selectPagination } from '../../redux/paginatinSlice';
+import { ItemsPerPage } from '..';
 
 
 export const Pagination: React.FC = () => {
@@ -17,6 +18,7 @@ export const Pagination: React.FC = () => {
     const pageNumbers = Array.from({ length: pagesToShow }, (_, index) => currentPage - 1 + index);
     return (
         <div className="pagination">
+            <ItemsPerPage />
             {currentPage > 1 &&
                 <button
                     className="pagination-button"
