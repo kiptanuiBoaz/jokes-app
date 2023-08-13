@@ -4,6 +4,7 @@ body{
     font-family: var(--global-font-family);
 }
 
+
 .dark{
     color:var(--dark-primary-color);
     background-color:var(--dark-primary-background-color);
