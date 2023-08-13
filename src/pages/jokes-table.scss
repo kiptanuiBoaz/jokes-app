@@ -1,16 +1,6 @@
 /* styles.scss */
 .table-container {
-  .items-per-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    select{
-        padding :4px 6px;
-        border-radius: 4px;
-        margin-left: 5px;
-    }
-  }
+ 
 
   .data-table {
     margin: 20px;
@@ -20,11 +10,19 @@
       width: 100%;
       border-collapse: collapse;
 
+      .title{
+        &:hover{
+          text-decoration: underline;
+          color:black;
+          cursor: pointer;
+        }
+      }
+
       th,
       td {
         padding: 10px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
       }
 
       th {

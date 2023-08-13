@@ -7,13 +7,17 @@ export interface JokeInterface {
     "createdAt": number
 }
 
-export interface EditingIdInterface{
-    editingId:string;
+export interface ThemeInterface {
+    theme: string;
+}
+
+export interface EditingIdInterface {
+    editingId: string;
 }
 
 export interface JokeStateInterface {
     joke: JokeInterface;
-    editingId:string;
+    editingId: string;
 }
 
 export interface PagenationInterface {
