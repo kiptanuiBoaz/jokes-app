@@ -8,7 +8,7 @@ import { JokeInterface, PagenationInterface } from '../types/types';
 import { selectPagination } from '../redux/paginatinSlice';
 import { UPDATE_JOKE } from '../redux/jokeSlice';
 import { useNavigate } from 'react-router-dom';
-import { resolveColor } from '../lib/functions';
+import { resolveColor } from '../lib/resolveColor';
 import { selectTheme } from '../redux/themeSlice';
 import { format, parse } from 'date-fns';
 

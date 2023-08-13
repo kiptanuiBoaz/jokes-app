@@ -4,7 +4,7 @@ export interface JokeInterface {
     "body": string,
     "author": string,
     "views": number,
-    "createdAt": number
+    "createdAt": string
 }
 
 export interface ThemeInterface {
