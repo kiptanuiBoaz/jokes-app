@@ -5,14 +5,18 @@ import { Spinner } from "./components";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { Layout } from "../Layout";
 import RequireAuth from "./pages/RequireAuth";
+import { useSelector } from "react-redux";
+import { selectTheme } from "./redux/themeSlice";
 const JokesTable = lazy(() => import("./pages/JokesTable"));
 const Login = lazy(() => import("./pages/Login"));
 const EditForm = lazy(() => import("./pages/EditForm"));
 
 export const App = () => {
+  const theme = useSelector(selectTheme);
+
 
   return (
-    <>
+    <main className={`${theme}`}>
       <ScrollToTop style={{ backgroundColor: "#4d7e3e", zIndex: 7 }} smooth color="#eeeee4" />
 
       <Suspense fallback={<Spinner />}>
@@ -33,7 +37,7 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
-    </>
+    </main>
   )
 }
 

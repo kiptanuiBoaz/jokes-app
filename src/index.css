@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Merriweather+Sans:wght@700&family=Montserrat:wght@500&family=Open+Sans:ital,wght@1,300&family=Poppins&display=swap");
+:root{
+    --dark-primary-color:#fff;
+    --dark-primary-background-color:#17191d;
+    --dark-accent-background-color:#292f38;
+
+    --light-primary-color:#17191d;
+    --light-primary-background-color:#fff;
+    --light-accent-background-color:#e6e8ea;
+    
+    --secondary-color:#097ea5;
+    --global-font-family:"Merriweather Sans", sans-serif;
+}

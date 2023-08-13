@@ -17,8 +17,10 @@ const JokesTable = () => {
   const { page, limit }: PagenationInterface = useSelector(selectPagination);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  useEffect(() => {
 
+
+
+  useEffect(() => {
     //get all posts from API
     const fetchPosts = async () => {
       setIsLoading(true);
@@ -49,8 +51,6 @@ const JokesTable = () => {
     <section className='table-container'>
       <div className="items-per-page">
         <h2>Jokes</h2>
-
-
       </div>
       {isLoading
         ? <Spinner />
@@ -77,7 +77,17 @@ const JokesTable = () => {
                   </td>
                   <td>{author}</td>
                   <td>{createdAt}</td>
-                  <td>{views}</td>
+                  <td style={{
+                    color: views >= 0 && views <= 25
+                      ? 'tomato'
+                      : views >= 26 && views <= 50
+                        ? 'orange'
+                        : views >= 51 && views <= 75
+                          ? 'yellow'
+                          : views >= 76 && views <= 100
+                            ? 'green'
+                            : 'black'
+                  }}>{views}</td>
                 </tr>
               ))}
             </tbody>

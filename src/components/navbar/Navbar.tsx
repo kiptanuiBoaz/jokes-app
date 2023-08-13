@@ -10,7 +10,6 @@ export const Navbar = () => {
   //redux store states
   const editingId = useSelector(selectEditingId);
   const theme = useSelector(selectTheme);
-  console.log(theme);
 
   //navigation fns
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ export const Navbar = () => {
 
 
   return (
-    <nav className='navbar-container'>
+    <nav className={`navbar-container ${theme}-nav`}>
       <h1 className='logo'>Joke App</h1>
       {/* display limit selectror when viewing table */}
       {
