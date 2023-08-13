@@ -14,9 +14,11 @@
     color: var(--secondary-color) !important;
   }
 
-  .menu-icon {
+  .menu-icon{
     cursor: pointer;
-    &:hover {
+    background-color: var(--dark-accent-background-color);
+    padding: 3px;
+    &:hover{
       color: var(--secondary-color);
     }
     @media only screen and (min-width: 720px) {
@@ -24,13 +26,14 @@
     }
   }
 
-  .mobile-menu {
-    display: absolute !important;
+  .mobile-menu{
+    display: absolute!important;
     flex-direction: column;
 
-    .link-container {
+    .link-container{
       flex-direction: column;
     }
+
   }
 
   .nav-items {
@@ -41,6 +44,7 @@
       flex-direction: column;
       display: none;
     }
+  
 
     .link-container {
       display: flex;
@@ -48,6 +52,20 @@
       @media only screen and (max-width: 720px) {
         flex-direction: column;
       }
+    }    
+  }
+  .mobile-menu-container{
+    background-color: var(--dark-accent-background-color);
+    border-radius: 4px;
+    padding: 5px 10px 10px 10px;
+    position: absolute;
+    right: 20px;
+    top:60px;
+    @media only screen and (min-width: 720px) {
+      display: none;
+    }
+    button{
+      margin:0 0 5px 0;
     }
   }
 }

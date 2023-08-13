@@ -6,3 +6,4 @@ export {Theme} from "./theme/Theme";
 export {ItemsPerPage} from "./items-per-page/ItemsPerPage";
 export {DangerBtn} from "./danger-btn/DangerBtn";
 export {ActionBtn} from "./action-btn/ActionBtn";
+export {MobileMenu} from "./mobile-menu/MobileMenu";

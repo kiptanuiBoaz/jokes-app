@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UPDATE_EDITING_ID } from '../../redux/jokeSlice';
 import { selectTheme } from '../../redux/themeSlice';
-import { ActionBtn, DangerBtn, Theme } from '..';
-import { HiOutlineMenuAlt3 } from "react-icons/hi"
+import { ActionBtn, DangerBtn, MobileMenu, Theme } from '..';
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai"
 import { useState } from 'react';
 
 export const Navbar = () => {
@@ -41,11 +42,22 @@ export const Navbar = () => {
     <nav className={`navbar-container ${theme}-nav`}>
       <h1 className='logo'>Joke App</h1>
       {/* display limit selectror when viewing table */}
-      <HiOutlineMenuAlt3
-        size={30}
-        className="menu-icon"
-        onClick={() => setShowMobileNav(!showMobileNav)}
-      />
+      {
+        showMobileNav ?
+          <AiOutlineClose
+            size={30}
+            className="menu-icon"
+            onClick={() => setShowMobileNav(!showMobileNav)}
+          />
+          :
+          <HiOutlineMenuAlt3
+            size={30}
+            className="menu-icon"
+            onClick={() => setShowMobileNav(!showMobileNav)}
+          />
+      }
+
+
 
       <div className={`nav-items ${showMobileNav && "mobile-nav"}`}>
 
@@ -55,6 +67,11 @@ export const Navbar = () => {
         </div>
         <Theme />
       </div>
+
+      {showMobileNav && <div className="mobile-menu-container">
+        <MobileMenu />
+      </div>
+      }
 
     </nav>
   )
