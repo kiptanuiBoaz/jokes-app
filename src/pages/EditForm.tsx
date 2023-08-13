@@ -16,7 +16,7 @@ const EditForm = () => {
   const navigate = useNavigate();
 
   //handle formData change
-  const handleInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
     setJoke((prevJoke) => ({
       ...prevJoke,
       [name]: value,
@@ -32,9 +32,7 @@ const EditForm = () => {
       url: editingId === "editing" ? `${EDIT_JOKE}/${existingJoke.id}` : ADD_JOKE,
       data: joke
     });
-
     console.log(res)
-
 
     dispatch(RESET_JOKE());
     navigate("/");
@@ -80,10 +78,10 @@ const EditForm = () => {
         <textarea
           className="body-input"
           name="body"
-          row={14}
+          rows={6}
           cols={5}
           value={joke.body}
-          onChange={handleInputChange} />
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>)=>handleInputChange(e)} />
         <br />
 
         <button onClick={(e) => handleSubmit(e)} type="submit">{editingId === "editing" ? 'Save' : 'Add'}</button>

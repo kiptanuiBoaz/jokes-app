@@ -11,6 +11,7 @@ export const Theme = () => {
     console.log(theme,dark);
 
 
+    //toggle theme global state
     useEffect(() => {
         console.log("fired")
         dispatch(TOGGLE_THEME({theme: dark ? "dark" : "light"}));
