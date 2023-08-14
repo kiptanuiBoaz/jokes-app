@@ -5,7 +5,7 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            <main style={{ minHeight: "600px" }}>
+            <main style={{ minHeight: "650px" }}>
                 {/* everrything between nav and footer */}
                 <Outlet />
 

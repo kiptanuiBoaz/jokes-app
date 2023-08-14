@@ -8,6 +8,7 @@ import { ActionBtn, DangerBtn, MobileMenu, Theme } from '..';
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai"
 import { useState } from 'react';
+import { RESET_USER } from '../../redux/authSlice';
 
 export const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
@@ -23,13 +24,13 @@ export const Navbar = () => {
   //remove cookie 
   const logOut = () => {
     Cookies.remove(token);
+    dispatch(RESET_USER());//remove user from redux
     navigate("/login");
   }
 
   //curent route
   const location = useLocation();
 
-  // console.log(location.pathname);
 
   //handle click event
   const handleClick = () => {
@@ -40,7 +41,7 @@ export const Navbar = () => {
 
   return (
     <nav className={`navbar-container ${theme}-nav`}>
-      <h1 className='logo'>Joke App</h1>
+      <h1 className='logo'>Jokes App</h1>
       {/* display limit selectror when viewing table */}
       {
         showMobileNav ?
@@ -68,6 +69,7 @@ export const Navbar = () => {
         <Theme />
       </div>
 
+      {/* menu that shows on mobile screen */}
       {showMobileNav && <div className="mobile-menu-container">
         <MobileMenu />
       </div>

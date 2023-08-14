@@ -25,7 +25,7 @@ const EditForm = () => {
 
 
   const handleSubmit = async () => {
-//simulating post request
+    //simulating post request
     // const res = await api({
     //   method: editingId === "editing" ? "PUT" : "POST",
     //   url: editingId === "editing" ? `${EDIT_JOKE}/${existingJoke.id}` : ADD_JOKE,
@@ -87,7 +87,9 @@ const EditForm = () => {
           type="text"
           name="title"
           value={joke.title}
-          onChange={handleInputChange} />
+          onChange={handleInputChange}
+          required
+        />
         <br />
 
         <label
@@ -103,7 +105,9 @@ const EditForm = () => {
           rows={6}
           cols={5}
           value={joke.body}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => handleInputChange(e)} />
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => handleInputChange(e)}
+          required
+        />
         <br />
 
         <ActionBtn clickHandler={handleSubmit}>{editingId === "editing" ? 'Save' : 'Add'}</ActionBtn>

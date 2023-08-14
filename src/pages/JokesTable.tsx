@@ -24,14 +24,10 @@ const JokesTable = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // //keeping track of device width
+  // //keeping track of device width//listen for width change //clean up event listener
   useEffect(() => {
     const handleEvent = () => setDeviceWidth(window.innerWidth);
-
-    //listen for width change
     window.addEventListener('resize', handleEvent);
-
-    //clean up event listener
     return () => window.removeEventListener('resize', handleEvent);
 
   }, [deviceWidth]);
@@ -65,8 +61,6 @@ const JokesTable = () => {
   }
 
 
-
-
   return (
     <section className={`table-container ${theme}-table`}>
 
@@ -93,9 +87,9 @@ const JokesTable = () => {
                       id, title, author, body, createdAt, views
                     })}
                   >
-                    {modifyText(deviceWidth,title)}
+                    {modifyText(deviceWidth, title)}
                   </td>
-                  <td>{modifyText(deviceWidth,author)}</td>
+                  <td>{modifyText(deviceWidth, author)}</td>
                   <td>{dateFnsFormat(createdAt)}</td>
                   <td style={{
                     color: resolveColor(views)

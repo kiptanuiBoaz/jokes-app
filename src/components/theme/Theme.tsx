@@ -1,11 +1,15 @@
 import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import "./theme.css";
 import { useEffect,useState } from "react";
-import { useDispatch } from "react-redux";
-import { TOGGLE_THEME } from "../../redux/themeSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { TOGGLE_THEME, selectTheme } from "../../redux/themeSlice";
 
 export const Theme = () => {
+    //local reactive state
     const [dark,setDark] = useState(true);
+    //global theme refrence
+    const theme = useSelector(selectTheme);
+    
     const dispatch = useDispatch();
 
 
@@ -18,7 +22,7 @@ export const Theme = () => {
         <div id="darkmode">
             <input
                 onChange={() => setDark(!dark)}
-                checked={dark}
+                checked={theme === "dark"}
                 type="checkbox"
                 className="checkbox"
                 id="checkbox"

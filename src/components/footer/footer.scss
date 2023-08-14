@@ -5,6 +5,14 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  a{
+    color:#fff;
+    &:hover{
+      color: var(--secondary-color);
+    }
+  }
   
 }
 

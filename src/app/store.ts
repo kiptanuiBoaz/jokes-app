@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import paginationSlice from '../redux/paginatinSlice';
 import jokeSlice from '../redux/jokeSlice';
 import themeSlice from '../redux/themeSlice';
+import authSlice from '../redux/authSlice';
 
 
 const store = configureStore({
@@ -9,6 +10,7 @@ const store = configureStore({
     pagination: paginationSlice,
     joke: jokeSlice,
     theme: themeSlice,
+    user:authSlice,
   },
 });
 
@@ -19,4 +21,5 @@ store.subscribe(() => {
   localStorage.setItem("pagination", JSON.stringify(store.getState().pagination));
   localStorage.setItem("theme", JSON.stringify(store.getState().theme));
   localStorage.setItem("joke", JSON.stringify(store.getState().joke));
+  localStorage.setItem("user", JSON.stringify(store.getState().user));
 });

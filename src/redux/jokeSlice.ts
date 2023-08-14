@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 
 const initialState: JokeStateInterface = {
     joke: {
-        "id": v4(),
+        "id": v4(),//generate id for joke
         "title": "",
         "body": "",
         "author": "",
