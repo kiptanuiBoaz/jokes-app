@@ -1,6 +1,6 @@
 # Jokes App 
 
-Deploy URL: https://jokes-c0f4jw6en-kiptanuiboaz.vercel.app/
+Deploy URL: https://jokes-c0f4jw6en-kiptanuiboaz.vercel.app
 
 Welcome to the documentation for the Jokes App, a React-based web application built using modern technologies and best practices. This document provides an overview of the project's structure, features, and usage instructions.
 
