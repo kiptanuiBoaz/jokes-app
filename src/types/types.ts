@@ -28,7 +28,8 @@ export interface JokeStateInterface {
 }
 
 export interface PagenationInterface {
-    page: number,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    page: any,
     limit: number,
 }
 export interface PaginationPayloadInterface {
