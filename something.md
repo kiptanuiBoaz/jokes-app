@@ -1,6 +1,6 @@
 # Jokes App 
 
-Deploy URL: https://jokes-c0f4jw6en-kiptanuiboaz.vercel.app
+Deploy URL: https://jokes-1lulx1mms-kiptanuiboaz.vercel.app/
 
 Welcome to the documentation for the Jokes App, a React-based web application built using modern technologies and best practices. This document provides an overview of the project's structure, features, and usage instructions.
 
@@ -76,7 +76,7 @@ To run the Jokes App locally on your machine, follow these steps:
 
 ## Deployment
 
-The Jokes App is deployed on Vercel for production. To access the live version of the app, visit [Jokes App on Vercel](https://jokes-c0f4jw6en-kiptanuiboaz.vercel.app/).
+The Jokes App is deployed on Vercel for production. To access the live version of the app, visit [Jokes App on Vercel](https://jokes-1lulx1mms-kiptanuiboaz.vercel.app/).
 
 ---
 
